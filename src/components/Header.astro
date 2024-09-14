@@ -1,0 +1,53 @@
+---
+import LogoHeader from "../components/LogoHeader.astro";
+import ButtonOpenMenuMobile from "./ButtonOpenMenuMobile.astro";
+
+const navItems = [
+  {
+    title: "About Us",
+    label: "about-us",
+    url: "/#about-us",
+  },
+  {
+    title: "Our Products",
+    label: "our-products",
+    url: "/#our-products",
+  },
+  {
+    title: "How to Buy",
+    label: "how-to-buy",
+    url: "/#how-to-buy",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "/#contact",
+  },
+];
+---
+
+<header class="w-full fixed z-10 bg-amber-800/40 text-white py-4 px-8">
+  <nav class="flex flex-row items-center justify-between">
+    <div class="flex-grow max-w-60">
+      <LogoHeader />
+    </div>
+    <div class="flex md:hidden">
+      <ButtonOpenMenuMobile />
+    </div>
+    <div class="hidden md:flex flex-row gap-6">
+      {
+        navItems.map((link) => (
+          <a
+            class=" rounded-3xl px-4 py-2 hover:bg-orange-800/70 transition"
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="hidden md:flex flex-grow max-w-60">
+      <span></span>
+    </div>
+  </nav>
+</header>

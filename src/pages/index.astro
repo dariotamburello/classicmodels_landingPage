@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import SectionContainer from "../components/SectionContainer.astro";
+import Hero from "../components/Hero.astro";
+import OurProducts from "../components/OurProducts.astro";
+import HowToBuy from "../components/HowToBuy.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout
+  title="Classic Models - Store"
+  ,
+  description="The best models of your favourites classic cars, motos, bus, trains and trucks."
+>
+  <main class="flex flex-col items-center">
+    <Hero />
+    <SectionContainer id="our-products">
+      <OurProducts />
+    </SectionContainer>
+    <SectionContainer id="how-to-buy">
+      <HowToBuy />
+    </SectionContainer>
+    <SectionContainer id="contact">
+      <Contact />
+    </SectionContainer>
+  </main>
+</Layout>
